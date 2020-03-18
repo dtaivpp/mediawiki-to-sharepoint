@@ -11,3 +11,7 @@ This is a simple script that will programatically send updates from MediaWiki to
     - Unix Base Systems: `source venv/bin/activate`
 4. Install requirements.txt `python -m pip install -r requirements.txt`
 
+#### Proposed Sharepoint List Format
+| Site URL         | Title   | Contents  |
+| ---------------- | ------- | --------- |
+| http://agiwiki   | "Title" | "Content" |
