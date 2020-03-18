@@ -1,10 +1,15 @@
 from shareplum import Site
 from shareplum import Office365
 from shareplum.site import Version
+from settings import Sharepoint_Pass, Sharepoint_User, Sharepoint_Url
+
+# Example
+# https://shareplum.readthedocs.io/en/latest/tutorial.html#update-list-data
 
 
 def _authenticate(_sharpoint_url: str, _username: str, _password: str):
     '''Returns Auth Cookie'''
+
     try:
         _cookie = Office365(_sharepoint_url, username=_username, password=_password).GetCookies()
         return _cookie
@@ -33,3 +38,6 @@ def get_list_items():
 def upload_changes():
     pass
 
+
+if __name__=="__main__":
+    # Use local variables for auth. 
