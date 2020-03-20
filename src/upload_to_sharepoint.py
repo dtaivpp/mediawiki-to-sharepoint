@@ -26,6 +26,14 @@ def _site_creation(_sharepoint_url: str, _username: str, _password: str):
     except: 
         raise Exception("Unable to create site with provided token")
 
+def  _list_doesnt_exist(site, list_name):
+    sp_lists = site.get_list_collection()
+
+    if sp_lists.get(list_name) == None:
+        return True
+
+    return False
+
 def create_list():
     pass
 
@@ -40,4 +48,9 @@ def upload_changes():
 
 
 if __name__=="__main__":
-    # Use local variables for auth. 
+    # Use local variables for auth.
+    SP_Site = _site_creation(Sharepoint_Url, Sharepoint_User, Sharepoint_Pass)
+    List_Name = "WikiMedia"
+
+    if _list_doesnt_exist(List_Name):
+        create_list("WikiMedia")
